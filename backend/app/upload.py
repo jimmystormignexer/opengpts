@@ -19,7 +19,7 @@ from langchain_core.runnables import (
     RunnableSerializable,
 )
 from langchain_core.vectorstores import VectorStore
-from langchain_openai import OpenAIEmbeddings
+from langchain_openai import AzureOpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter, TextSplitter
 
 from app.ingest import ingest_blob
@@ -118,7 +118,7 @@ PG_CONNECTION_STRING = PGVector.connection_string_from_db_params(
 )
 vstore = PGVector(
     connection_string=PG_CONNECTION_STRING,
-    embedding_function=OpenAIEmbeddings(),
+    embedding_function=AzureOpenAIEmbeddings(),
     use_jsonb=True,
 )
 
