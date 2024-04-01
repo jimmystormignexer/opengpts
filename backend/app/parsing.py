@@ -12,6 +12,7 @@ HANDLERS = {
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document": (
         MsWordParser()
     ),
+    "text/csv": TextParser(),
 }
 
 SUPPORTED_MIMETYPES = sorted(HANDLERS.keys())
